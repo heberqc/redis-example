@@ -20,7 +20,7 @@ redisGET('name')
   console.log('agrupacion:', agrupacion)
 })
 
-.then(() => redisSADD('prueba', 'uno', 'dos', 'tres', 'cuatro'))
+.then(() => redisSADD('prueba', 'uno', 'dos', 'tres', 'cuatro', 'cinco'))
 .then(agregaMiembros => {
   console.log('agregaMiembros:', agregaMiembros)
 })

@@ -16,7 +16,7 @@ exports.redisGET = key => new Promise((resolve, reject) => {
 
 // agregar agregar miembros a una agrupacion
 exports.redisSADD = (key, ...members) => new Promise((resolve, reject) => {
-  redisClient.SADD(key, members, (err, respuesta) => {
+  redisClient.SADD(key, ...members, (err, respuesta) => {
     if (err) reject(err)
     else resolve(respuesta)
   })
