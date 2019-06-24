@@ -38,6 +38,13 @@ exports.redisSISMEMBER = (key, member) => new Promise((resolve, reject) => {
   })
 })
 
+exports.redisDEL = (...keys) => new Promise((resolve, reject) => {
+  redisClient.DEL(...keys, (err, respuesta) => {
+    if (err) reject(err)
+    else resolve(respuesta)
+  })
+})
+
 exports.redisDiconnection = () => {
   redisClient.quit()
 }

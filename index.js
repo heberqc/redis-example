@@ -6,6 +6,7 @@ const {
   redisSMEMBERS,
   redisSADD,
   redisSISMEMBER,
+  redisDEL,
   redisDiconnection,
 } = require('./services/redis')
 
@@ -34,6 +35,11 @@ redisGET('name')
 .then(() => redisSISMEMBER('prueba', 'dos'))
 .then(esMiembro => {
   console.log('esMiembro:', esMiembro)
+})
+
+.then(() => redisDEL('name'))
+.then(eliminado => {
+  console.log('eliminado:', eliminado)
 })
 
 .then(() => redisDiconnection())
