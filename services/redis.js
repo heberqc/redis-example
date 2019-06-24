@@ -37,3 +37,7 @@ exports.redisSISMEMBER = (key, member) => new Promise((resolve, reject) => {
     else resolve(respuesta)
   })
 })
+
+exports.redisDiconnection = () => {
+  redisClient.quit()
+}

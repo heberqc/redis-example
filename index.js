@@ -6,6 +6,7 @@ const {
   redisSMEMBERS,
   redisSADD,
   redisSISMEMBER,
+  redisDiconnection,
 } = require('./services/redis')
 
 redisConnection(redis_uri)
@@ -34,3 +35,5 @@ redisGET('name')
 .then(esMiembro => {
   console.log('esMiembro:', esMiembro)
 })
+
+.then(() => redisDiconnection())
